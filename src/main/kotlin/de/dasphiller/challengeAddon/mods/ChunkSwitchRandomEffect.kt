@@ -1,5 +1,7 @@
 package de.dasphiller.challengeAddon.mods
 
+import de.dasphiller.challengeAddon.AddonManager
+import de.dasphiller.challengeAddon.utils.AddonMod
 import de.miraculixx.challenge.api.modules.challenges.Challenge
 import net.axay.kspigot.event.listen
 import net.axay.kspigot.event.register
@@ -17,7 +19,8 @@ class ChunkSwitchRandomEffect : Challenge {
     private var effectLevel: Boolean = true
 
     override fun start(): Boolean {
-
+        val settings = AddonManager.getSettings(AddonMod.CHUNK_SWITCH_RANDOM_EFFECT).settings
+        effectLevel = settings["effectLevel"]?.toBool()?.getValue() ?: true
 
         return true
     }
