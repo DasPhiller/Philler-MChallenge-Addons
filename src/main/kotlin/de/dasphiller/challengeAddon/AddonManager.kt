@@ -1,11 +1,11 @@
-package de.miraculixx.challengeAddon
+package de.dasphiller.challengeAddon
 
 import de.miraculixx.challenge.api.MChallengeAPI
 import de.miraculixx.challenge.api.settings.ChallengeData
-import de.miraculixx.challengeAddon.utils.AddonMod
-import de.miraculixx.challengeAddon.utils.cmp
-import de.miraculixx.challengeAddon.utils.plus
-import de.miraculixx.challengeAddon.utils.prefix
+import de.dasphiller.challengeAddon.utils.AddonMod
+import de.dasphiller.challengeAddon.utils.cmp
+import de.dasphiller.challengeAddon.utils.plus
+import de.dasphiller.challengeAddon.utils.prefix
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

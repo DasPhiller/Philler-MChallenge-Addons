@@ -1,5 +1,7 @@
-package de.miraculixx.challengeAddon
+package de.dasphiller.challengeAddon
 
+import de.dasphiller.challengeAddon.utils.AddonMod
+import de.miraculixx.challenge.api.modules.challenges.Challenges
 import net.axay.kspigot.main.KSpigot
 
 /**
@@ -21,6 +23,10 @@ class MAddon : KSpigot() {
 
     override fun startup() {
         // Load all data on startup
+        logger.info("Addons: Availible Challenges:")
+        AddonMod.values().forEach {
+            logger.info("• ${it.name}")
+        }
         AddonManager.loadMods()
     }
 

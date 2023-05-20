@@ -1,4 +1,4 @@
-package de.miraculixx.challengeAddon.utils
+package de.dasphiller.challengeAddon.utils
 
 import net.kyori.adventure.audience.Audience
 import net.kyori.adventure.text.Component
