@@ -10,6 +10,7 @@ import de.dasphiller.challengeAddon.MAddon
 import de.dasphiller.challengeAddon.mods.*
 import de.miraculixx.challenge.api.settings.ChallengeBoolSetting
 import de.miraculixx.challenge.api.settings.ChallengeIntSetting
+import org.bukkit.Material
 import org.bukkit.entity.Mob
 import java.util.*
 
@@ -196,7 +197,7 @@ enum class AddonMod(val uuid: UUID) {
                 ChunkSwitchRandomEffect(),
                 AddonManager.getSettings(this),
                 Icon(
-                    "LEATHER_BOOTS",
+                    "GLASS",
                     naming = IconNaming(
                         cmp("Chunk Switch Random Effect"),
                         listOf(cmp("If you switch the chunk you get a random effect"))

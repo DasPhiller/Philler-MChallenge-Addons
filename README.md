@@ -1,6 +1,9 @@
 # Philler-MCallenge-Addons
 My MChallenge Addon that adds some very nice challenges
 
+Download it from [Github](https://github.com/DasPhiller/Philler-MChallenge-Addons/releases)
+
+
 ## Challenges
 
 ### ChunkSwitchDamage
