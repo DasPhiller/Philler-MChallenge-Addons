@@ -27,7 +27,8 @@ enum class AddonMod(val uuid: UUID) {
     REVERSE_DAMAGE(UUID.randomUUID()),
     MOB_DAMAGE_SWITCH(UUID.randomUUID()),
     MOB_KILL_REMOVE_HEART(UUID.randomUUID()),
-    DAMAGE_MOB_SPAWN(UUID.randomUUID())
+    DAMAGE_MOB_SPAWN(UUID.randomUUID()),
+    CHUNK_SWITCH_RANDOM_EFFECT(UUID.randomUUID())
     ;
 
     /**
@@ -174,6 +175,7 @@ enum class AddonMod(val uuid: UUID) {
                 setOf(ChallengeTags.ADDON, ChallengeTags.FREE, ChallengeTags.HARD),
                 MAddon.addonName
             )
+
             DAMAGE_MOB_SPAWN -> CustomChallengeData(
                 uuid,
                 DamageMobSpawn(),
@@ -186,6 +188,21 @@ enum class AddonMod(val uuid: UUID) {
                     )
                 ),
                 setOf(ChallengeTags.ADDON, ChallengeTags.FREE, ChallengeTags.FUN, ChallengeTags.RANDOMIZER),
+                MAddon.addonName
+            )
+
+            CHUNK_SWITCH_RANDOM_EFFECT -> CustomChallengeData(
+                uuid,
+                ChunkSwitchRandomEffect(),
+                AddonManager.getSettings(this),
+                Icon(
+                    "LEATHER_BOOTS",
+                    naming = IconNaming(
+                        cmp("Chunk Switch Random Effect"),
+                        listOf(cmp("If you switch the chunk you get a random effect"))
+                    )
+                ),
+                setOf(ChallengeTags.ADDON, ChallengeTags.FREE, ChallengeTags.HARD, ChallengeTags.RANDOMIZER),
                 MAddon.addonName
             )
         }
@@ -275,13 +292,27 @@ enum class AddonMod(val uuid: UUID) {
                     "hearts" to ChallengeIntSetting("RED_DYE", 2, "hp", min = 1, max = 20)
 
                 ),
-                mapOf("hearts" to IconNaming(
-                    cmp("Hearts"),
-                    listOf(cmp("Select how many hearts you lose"))
-                ))
+                mapOf(
+                    "hearts" to IconNaming(
+                        cmp("Hearts"),
+                        listOf(cmp("Select how many hearts you lose"))
+                    )
+                )
             )
+
             DAMAGE_MOB_SPAWN -> ChallengeData(
 
+            )
+            CHUNK_SWITCH_RANDOM_EFFECT -> ChallengeData(
+                mapOf(
+                    "effectLevel" to ChallengeBoolSetting("COMMAND_BLOCK", true)
+                ),
+                mapOf(
+                    "effectLevel" to IconNaming(
+                        cmp("Add Levels"),
+                        listOf(cmp("If you switch the chunk and get the same effect should the level of the effect add up"))
+                    )
+                )
             )
         }
     }
